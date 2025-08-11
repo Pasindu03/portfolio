@@ -113,9 +113,6 @@ Feel free to use and customize it for your own portfolio.
 ## 📬 Contact
 
 👤 **Pasindu Yapa**
-📧 [your-email@example.com](mailto:your-email@example.com)
+📧 [akalanka.yapa03@gmail.com](mailto:akalanka.yapa03@gmail.com)
 🌐 [Your Website/Portfolio Link](https://yourwebsite.com)
 
----
-If you want, I can **add GitHub badges, screenshots, and a live demo link** so it looks even more attractive when someone visits your repository. That would make it stand out a lot more.
-```
