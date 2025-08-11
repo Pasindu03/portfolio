@@ -1,0 +1,51 @@
+name: CI/CD Pipeline
+
+# Run when code is pushed to main or when a PR is opened
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1 — Checkout code
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Step 2 — Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+
+      # Step 3 — Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Step 4 — Run tests
+      - name: Run tests
+        run: npm test
+
+      # Step 5 — Build project
+      - name: Build project
+        run: npm run build
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'  # Only deploy from main branch
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Example: Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
