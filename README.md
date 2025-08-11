@@ -4,7 +4,7 @@
 
 # 🌟 Portfolio - Pasindu Yapa
 
-A tailor-made personal portfolio application built using **Next.js** with **TypeScript**, **Tailwind CSS**, and **Google Fonts**.  
+A tailor-made personal portfolio application built using **Next.js** with **TypeScript** and **Tailwind CSS**.  
 This project showcases my skills, projects, and achievements in a clean, modern, and responsive UI.
 
 ---
@@ -66,31 +66,6 @@ root/
    ```
    http://localhost:3000
    ```
-
----
-
-## 🖼 Root Layout Code
-
-```typescript
-import './globals.css';
-import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-
-const inter = Inter({ subsets: ['latin'] });
-
-export const metadata: Metadata = {
-  title: 'Portfolio - Pasindu Yapa',
-  description: 'A Tailor Made Portfolio Application of Pasindu Yapa',
-};
-
-export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
-    </html>
-  );
-}
-```
 
 ---
 
