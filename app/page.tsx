@@ -384,7 +384,7 @@ export default function Portfolio() {
                                     isHeroVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
                                 }`}
                             >
-                                Full-stack software engineer with 4+ years of experience building scalable web applications that solve
+                                Full-stack software engineer with 1+ year of experience building scalable web applications that solve
                                 real-world problems and delight users.
                             </p>
                         </div>
