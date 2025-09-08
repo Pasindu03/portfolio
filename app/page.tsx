@@ -14,19 +14,22 @@ const milestones = [
     {
         year: "2025",
         title: "Director - Alva Tech",
-        description: "Overseeing product strategy and leading cross-functional teams to deliver innovative software solutions at scale",
+        description:
+            "Overseeing product strategy and leading cross-functional teams to deliver innovative software solutions at scale",
         icon: <Code className="w-5 h-5" />,
     },
     {
         year: "2024",
         title: "Software Engineering Intern - Rumex",
-        description: "Contributed to frontend services and optimized database performance with guidance of senior engineers team",
+        description:
+            "Contributed to frontend services and optimized database performance with guidance of senior engineers team",
         icon: <Database className="w-5 h-5" />,
     },
     {
         year: "2023",
         title: "Student - Software Engineering",
-        description: "Gained hands-on experience building full-stack applications with modern frameworks and cloud platforms",
+        description:
+            "Gained hands-on experience building full-stack applications with modern frameworks and cloud platforms",
         icon: <Globe className="w-5 h-5" />,
     },
     {
@@ -355,6 +358,7 @@ export default function Portfolio() {
             </section>
 
             <ContactSection
+                ref={contactAnimation.ref}
                 darkMode={darkMode}
                 isVisible={contactAnimation.isVisible}
                 onEmailClick={handleEmailClick}
