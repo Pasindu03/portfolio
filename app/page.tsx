@@ -8,6 +8,9 @@ import { Github, ExternalLink, Code, Database, Globe, Smartphone, Award, Users, 
 import { FloatingNavbar } from "@/components/floating-navbar"
 import { HeroSection } from "@/components/hero-section"
 import { ContactSection } from "@/components/contact-section"
+import { EducationSection } from "@/components/education-section"
+import { GitHubSection } from "@/components/github-section"
+import { Footer } from "@/components/footer"
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 
 const milestones = [
@@ -116,6 +119,8 @@ export default function Portfolio() {
     const skillsAnimation = useScrollAnimation()
     const projectsAnimation = useScrollAnimation()
     const achievementsAnimation = useScrollAnimation()
+    const educationAnimation = useScrollAnimation()
+    const githubAnimation = useScrollAnimation()
     const contactAnimation = useScrollAnimation()
 
     useEffect(() => {
@@ -142,23 +147,13 @@ export default function Portfolio() {
         setDarkMode(!darkMode)
     }
 
-    const handleEmailClick = () => {
-        try {
-            window.location.href =
-                "mailto:akalanka.yapa03@gmail.com?subject=Let's work together&body=Hi Pasindu, I'd like to discuss a project with you."
-        } catch (error) {
-            navigator.clipboard.writeText("akalanka.yapa03@gmail.com")
-            alert("Email copied to clipboard: akalanka.yapa03@gmail.com")
-        }
-    }
-
     return (
         <div
             className={`min-h-screen transition-colors duration-300 ${darkMode ? "bg-black text-white" : "bg-white text-black"}`}
         >
             <FloatingNavbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
 
-            <HeroSection darkMode={darkMode} isVisible={isHeroVisible} onEmailClick={handleEmailClick} />
+            <HeroSection darkMode={darkMode} isVisible={isHeroVisible} />
 
             {/* Journey Section */}
             <section id="journey" className={`py-20 px-4 md:px-8 lg:px-16 ${darkMode ? "bg-gray-900/30" : "bg-gray-100/30"}`}>
@@ -347,7 +342,17 @@ export default function Portfolio() {
                 </div>
             </section>
 
+            {/* Education Section */}
+            <EducationSection ref={educationAnimation.ref} darkMode={darkMode} isVisible={educationAnimation.isVisible} />
+
+            {/* GitHub Section */}
+            <GitHubSection ref={githubAnimation.ref} darkMode={darkMode} isVisible={githubAnimation.isVisible} />
+
+            {/* Contact Section */}
             <ContactSection ref={contactAnimation.ref} darkMode={darkMode} isVisible={contactAnimation.isVisible} />
+
+            {/* Footer */}
+            <Footer darkMode={darkMode} />
         </div>
     )
 }
