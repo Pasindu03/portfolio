@@ -42,44 +42,45 @@ const milestones = [
 
 const projects = [
     {
-        title: "E-Commerce Platform",
-        description: "Full-stack marketplace with real-time inventory, payment processing, and admin dashboard",
-        image: "/modern-ecommerce-dashboard.png",
-        tech: ["React", "Node.js", "PostgreSQL", "Stripe", "AWS"],
+        title: "Wishkah Prints - Frontend",
+        description:
+            "E-commerce platform for custom print products with responsive UI, product catalog, and seamless checkout flow.",
+        image: "/wishkah.png",
+        tech: ["React", "Tailwind CSS", "Redux Toolkit", "Stripe API", "Firebase"],
         github: "https://github.com/Pasindu03",
-        live: "#",
+        live: "https://wishkahprints.ca/",
     },
     {
-        title: "Task Management SaaS",
-        description: "Collaborative project management tool with real-time updates and team analytics",
-        image: "/clean-task-management-app.png",
-        tech: ["Next.js", "TypeScript", "Prisma", "WebSocket", "Vercel"],
+        title: "Lanka Shop - Frontend",
+        description:
+            "Modern online shopping platform with product filtering, cart management, and smooth client-side navigation.",
+        image: "/lankashop.jpg",
+        tech: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Vercel"],
         github: "https://github.com/Pasindu03",
-        live: "#",
     },
     {
-        title: "AI Content Generator",
-        description: "Machine learning powered content creation tool with custom model training",
+        title: "Backend Content Management System",
+        description: "CMS backend for managing products, categories, and users with role-based access and secure APIs.",
         image: "/ls-be.png",
-        tech: ["Python", "TensorFlow", "FastAPI", "React", "Docker"],
+        tech: ["Node.js", "Express", "PostgreSQL", "Prisma", "Docker"],
         github: "https://github.com/Pasindu03/LankaShop-CMS",
         live: "https://v0-admin-cms-requirements.vercel.app/",
     },
     {
-        title: "Mobile Banking App",
-        description: "Secure financial application with biometric authentication and real-time transactions",
-        image: "/mobile-banking-app.png",
-        tech: ["React Native", "Node.js", "MongoDB", "JWT", "Plaid API"],
-        github: "https://github.com/Pasindu03",
-        live: "#",
+        title: "Carfera Motors - Frontend",
+        description:
+            "Car dealership website with vehicle listings, booking requests, and an admin panel for inventory updates.",
+        image: "/carfera.png",
+        tech: ["React", "Tailwind CSS", "Axios", "Node.js", "MongoDB"],
+        github: "https://github.com/Pasindu03/Carfera-Motors",
     },
     {
-        title: "IoT Dashboard",
-        description: "Real-time monitoring system for smart home devices with predictive analytics",
-        image: "/iot-dashboard.png",
-        tech: ["Vue.js", "Express", "InfluxDB", "MQTT", "Chart.js"],
-        github: "https://github.com/Pasindu03",
-        live: "#",
+        title: "Weather Prediction AI Model",
+        description:
+            "AI-powered weather forecasting app with historical data visualization and interactive prediction charts.",
+        image: "/ai.png",
+        tech: ["Python", "Scikit-learn", "Pandas", "Matplotlib", "Streamlit"],
+        github: "https://github.com/Pasindu03/Weather-Prediction-AI",
     },
 ]
 
@@ -148,19 +149,6 @@ export default function Portfolio() {
         } catch (error) {
             navigator.clipboard.writeText("akalanka.yapa03@gmail.com")
             alert("Email copied to clipboard: akalanka.yapa03@gmail.com")
-        }
-    }
-
-    const handleDownloadCV = () => {
-        try {
-            const link = document.createElement("a")
-            link.href = "/cv-document.png"
-            link.download = "Pasindu_Yapa_Resume.pdf"
-            document.body.appendChild(link)
-            link.click()
-            document.body.removeChild(link)
-        } catch (error) {
-            window.open("/cv-document.png", "_blank")
         }
     }
 
@@ -273,7 +261,7 @@ export default function Portfolio() {
                                     <img
                                         src={project.image || "/placeholder.svg"}
                                         alt={project.title}
-                                        className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+                                        className="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-110"
                                     />
                                     <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center gap-4">
                                         <Button
@@ -285,14 +273,16 @@ export default function Portfolio() {
                                             <Github className="w-4 h-4 mr-2" />
                                             Code
                                         </Button>
-                                        <Button
-                                            size="sm"
-                                            onClick={() => window.open(project.live, "_blank")}
-                                            className="bg-teal-500 hover:bg-teal-600 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 delay-75"
-                                        >
-                                            <ExternalLink className="w-4 h-4 mr-2" />
-                                            Live
-                                        </Button>
+                                        {project.live && (
+                                            <Button
+                                                size="sm"
+                                                onClick={() => window.open(project.live, "_blank")}
+                                                className="bg-teal-500 hover:bg-teal-600 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 delay-75"
+                                            >
+                                                <ExternalLink className="w-4 h-4 mr-2" />
+                                                Live
+                                            </Button>
+                                        )}
                                     </div>
                                 </div>
 
@@ -357,13 +347,7 @@ export default function Portfolio() {
                 </div>
             </section>
 
-            <ContactSection
-                ref={contactAnimation.ref}
-                darkMode={darkMode}
-                isVisible={contactAnimation.isVisible}
-                onEmailClick={handleEmailClick}
-                onDownloadCV={handleDownloadCV}
-            />
+            <ContactSection ref={contactAnimation.ref} darkMode={darkMode} isVisible={contactAnimation.isVisible} />
         </div>
     )
 }
