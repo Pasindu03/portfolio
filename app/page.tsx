@@ -153,7 +153,9 @@ export default function Portfolio() {
         >
             <FloatingNavbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
 
-            <HeroSection darkMode={darkMode} isVisible={isHeroVisible} />
+            <HeroSection darkMode={darkMode} isVisible={isHeroVisible} onEmailClick={function (): void {
+                throw new Error("Function not implemented.")
+            }} />
 
             {/* Journey Section */}
             <section id="journey" className={`py-20 px-4 md:px-8 lg:px-16 ${darkMode ? "bg-gray-900/30" : "bg-gray-100/30"}`}>
