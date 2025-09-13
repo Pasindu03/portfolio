@@ -27,7 +27,7 @@ export function Footer({ darkMode }: FooterProps) {
           <div>
             <h4 className="font-heading font-semibold text-lg mb-4">Quick Links</h4>
             <div className="space-y-2">
-              {["Home", "Journey", "Skills", "Projects", "Education", "GitHub", "Contact"].map((link) => (
+              {["Home", "Journey", "Skills", "Projects", "Contact"].map((link) => (
                 <a
                   key={link}
                   href={`#${link.toLowerCase()}`}
