@@ -35,8 +35,8 @@ export const ContactSection = forwardRef<HTMLElement, ContactSectionProps>(({ da
     const handleDownloadCV = () => {
         try {
             const link = document.createElement("a")
-            link.href = "/cv-document.png"
-            link.download = "Pasindu_Yapa_Resume.pdf"
+            link.href = "/Pasindu_Yapa___CV.pdf"
+            link.download = "/Pasindu_Yapa___CV.pdf"
             document.body.appendChild(link)
             link.click()
             document.body.removeChild(link)

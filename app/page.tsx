@@ -344,11 +344,11 @@ export default function Portfolio() {
                 </div>
             </section>
 
-            {/* Education Section */}
+            {/* Education Section
             <EducationSection ref={educationAnimation.ref} darkMode={darkMode} isVisible={educationAnimation.isVisible} />
 
-            {/* GitHub Section */}
-            <GitHubSection ref={githubAnimation.ref} darkMode={darkMode} isVisible={githubAnimation.isVisible} />
+             GitHub Section
+            <GitHubSection ref={githubAnimation.ref} darkMode={darkMode} isVisible={githubAnimation.isVisible} />*/}
 
             {/* Contact Section */}
             <ContactSection ref={contactAnimation.ref} darkMode={darkMode} isVisible={contactAnimation.isVisible} />
