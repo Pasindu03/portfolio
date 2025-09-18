@@ -85,29 +85,38 @@ const projects = [
         tech: ["Python", "Scikit-learn", "Pandas", "Matplotlib", "Streamlit"],
         github: "https://github.com/Pasindu03/Weather-Prediction-AI",
     },
+    {
+        title: "Gameboy - Retro Games",
+        description:
+            "Ongoing Gameboy Project - Fun for all ages with Retro Games.",
+        image: "/gameboy.png",
+        tech: ["React", "Tailwind CSS", "ShadCn", "Github Pages", "Firebase"],
+        github: "https://github.com/Pasindu03/gameboy",
+        live: "http://pasindu-yapa.me/gameboy",
+    },
 ]
 
 const skills = [
-    { category: "Frontend", items: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Vue.js"] },
-    { category: "Backend", items: ["Node.js", "Python", "PostgreSQL", "MongoDB", "Redis"] },
+    { category: "Frontend", items: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Angular"] },
+    { category: "Backend", items: ["Spring Boot", "Node.js", "Python", "MongoDB", "Redis"] },
     { category: "Cloud", items: ["AWS", "Vercel", "Docker", "Kubernetes", "CI/CD"] },
-    { category: "Tools", items: ["Git", "Figma", "Postman", "Jest", "Webpack"] },
+    { category: "Tools", items: ["Git", "Figma", "Postman", "Jira", "Jetbrains", "Termius"] },
 ]
 
 const achievements = [
     {
-        title: "Top Performer Award",
-        description: "Recognized for exceptional performance and leadership in Q4 2023",
+        title: "Top Academic Performance",
+        description: "Recognized for exceptional performance on academic performance with straight A's",
         icon: <Award className="w-6 h-6" />,
     },
     {
         title: "Team Leadership",
-        description: "Successfully led a team of 8 developers on a critical project",
+        description: "Successfully led a team of 35 developers on a critical project of event planning, management and execution",
         icon: <Users className="w-6 h-6" />,
     },
     {
         title: "Client Success",
-        description: "Delivered 15+ projects with 98% client satisfaction rate",
+        description: "Delivered 3+ projects with 100% client satisfaction rate",
         icon: <Briefcase className="w-6 h-6" />,
     },
 ]
@@ -343,12 +352,6 @@ export default function Portfolio() {
                     </div>
                 </div>
             </section>
-
-            {/* Education Section
-            <EducationSection ref={educationAnimation.ref} darkMode={darkMode} isVisible={educationAnimation.isVisible} />
-
-             GitHub Section
-            <GitHubSection ref={githubAnimation.ref} darkMode={darkMode} isVisible={githubAnimation.isVisible} />*/}
 
             {/* Contact Section */}
             <ContactSection ref={contactAnimation.ref} darkMode={darkMode} isVisible={contactAnimation.isVisible} />
